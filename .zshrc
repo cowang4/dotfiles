@@ -29,6 +29,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #load custom aliases
 source $HOME/.aliases
+source $HOME/.exports
 source $HOME/.transfersh
 
 #load custom prompt w/ git status
