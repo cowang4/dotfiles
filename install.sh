@@ -11,3 +11,4 @@ ln -sfv "$DOTFILES_DIR/.transfersh" ~
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/.zshrc" ~
 ln -sfv "$DOTFILES_DIR/.profile" ~
+ln -sfv "$DOTFILES_DIR/.exports" ~
