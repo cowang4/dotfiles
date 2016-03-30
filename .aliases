@@ -1,0 +1,40 @@
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias diff='colordiff'
+
+alias la='ls -a --color'
+alias ..='cd ..'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias nt='nautilus'
+alias weather='/bin/ansiweather/./ansiweather'
+alias forecast='/bin/ansiweather/./ansiweather -F'
+alias daylight='/bin/ansiweather/./ansiweather -d true'
+alias vim='gvim'
+
+alias CompOrg="cd ~/Documents/School/CSCI-2500_Comp_Org"
+alias FOCS="cd ~/Documents/School/CSCI-2200_FOCS"
+alias ECON="cd ~/Documents/School/ECON-4130_Money&Banking"
+alias MultiVar="cd ~/Documents/School/MATH-2010_MultiVar"
+
+alias labs="cd labs"
+alias hws="cd hws"
+alias lectures="cd lectures"
+
+function cd() {
+  emulate -L zsh
+  builtin cd $@ &&
+  clear &&
+  ls
+}
+
+function cls() {
+  emulate -L zsh
+  clear &&
+  ls
+}
