@@ -2,4 +2,4 @@
 
 ## Installation
 
-Run install.sh
+`install.sh`
