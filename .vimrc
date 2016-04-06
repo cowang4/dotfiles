@@ -72,7 +72,7 @@ map <leader>n :NERDTreeToggle<CR>
 au BufNewFile,BufRead *.tex set filetype=tex
 
 colorscheme mustang
-set guifont=Ubuntu\ Mono\ 12
+set guifont=Ubuntu\ Mono\ 14
 
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
