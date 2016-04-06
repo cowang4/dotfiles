@@ -1,4 +1,5 @@
 if test "${PS1+set}"; then export CDPATH=.:~:~/Documents/School; fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export GPG_TTY=$(tty)
 #export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
