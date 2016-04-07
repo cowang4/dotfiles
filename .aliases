@@ -6,6 +6,7 @@ alias egrep='egrep --color=auto'
 alias diff='colordiff'
 
 alias la='ls -a --color'
+alias cls='clear && ls'
 alias ..='cd ..'
 alias gs='git status'
 alias ga='git add'
@@ -16,6 +17,7 @@ alias weather='/bin/ansiweather/./ansiweather'
 alias forecast='/bin/ansiweather/./ansiweather -F'
 alias daylight='/bin/ansiweather/./ansiweather -d true'
 alias vim='gvim'
+alias chrome='google-chrome'
 
 alias CompOrg="cd ~/Documents/School/CSCI-2500_Comp_Org"
 alias FOCS="cd ~/Documents/School/CSCI-2200_FOCS"
@@ -29,12 +31,6 @@ alias lectures="cd lectures"
 function cd() {
   emulate -L zsh
   builtin cd $@ &&
-  clear &&
-  ls
-}
-
-function cls() {
-  emulate -L zsh
   clear &&
   ls
 }
