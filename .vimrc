@@ -38,6 +38,7 @@ set expandtab
 map Q gq   
 inoremap <C-U> <C-G>u<C-U>
 let mapleader=","
+let maplocalleader=","
 nnoremap <leader><space> :noh<cr>
 nnoremap <up> <nop>
 nnoremap <down> <nop>

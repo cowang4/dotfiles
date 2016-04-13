@@ -34,4 +34,4 @@ source $HOME/.transfersh
 
 #load custom prompt w/ git status
 source /usr/bin/zsh-git-prompt/zshrc.sh
-PROMPT='%{$fg_bold[yellow]%}%n%{$reset_color%}:%{$fg_bold[cyan]%}%2~%{$reset_color%}$(git_super_status) %{$fg_bold[red]%}>%{$fg_bold[yellow]%}>%{$fg_bold[green]%}>%{$reset_color%} '
+PROMPT='%{$fg_bold[red]%}%n%{$reset_color%}:%{$fg_bold[green]%}%2~%{$reset_color%}$(git_super_status) %{$fg_bold[blue]%}$%{$reset_color%} '
