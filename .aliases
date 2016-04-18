@@ -5,6 +5,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='colordiff'
 
+alias quit='exit'
 alias la='ls -a --color'
 alias cls='clear && ls'
 alias ..='cd ..'
