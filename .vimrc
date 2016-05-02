@@ -89,5 +89,5 @@ let g:syntastic_check_on_wq = 0
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:yankring_history_dir = '$HOME/.vim'
-set ambiwidth=double
+" set ambiwidth=double
 set rnu
