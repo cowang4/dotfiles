@@ -2,6 +2,8 @@ filetype off
 call pathogen#helptags()
 call pathogen#infect()
 filetype plugin indent on
+set number
+set relativenumber
 set nocompatible
 set modelines=0
 set wrap
