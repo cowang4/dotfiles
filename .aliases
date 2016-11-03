@@ -25,11 +25,7 @@ alias gsync='git pull && git push'
 alias gl='git log --oneline --decorate'
 alias gh='git log --color --pretty=format:"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)" --relative-date --decorate'
 
-alias CompOrg="cd ~/Documents/School/CSCI-2500_Comp_Org"
-alias FOCS="cd ~/Documents/School/CSCI-2200_FOCS"
-alias ECON="cd ~/Documents/School/ECON-4130_Money&Banking"
-alias MultiVar="cd ~/Documents/School/MATH-2010_MultiVar"
-alias outing="ftp ftp.union.rpi.edu"
+alias outing="ssh outing@ftp.union.rpi.edu"
 
 alias labs="cd labs"
 alias hws="cd hws"
