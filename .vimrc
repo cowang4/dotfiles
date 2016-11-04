@@ -1,9 +1,12 @@
+call plug#begin()
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'neomake/neomake'
+call plug#end()
+
 filetype off
-call pathogen#helptags()
-call pathogen#infect()
 filetype plugin indent on
+set termguicolors
 set number
-set relativenumber
 set nocompatible
 set modelines=0
 set wrap
@@ -42,14 +45,6 @@ inoremap <C-U> <C-G>u<C-U>
 let mapleader=","
 let maplocalleader=","
 nnoremap <leader><space> :noh<cr>
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
@@ -74,22 +69,12 @@ map <leader>n :NERDTreeToggle<CR>
 
 au BufNewFile,BufRead *.tex set filetype=tex
 
-colorscheme mustang
 set guifont=Ubuntu\ Mono\ 14
 
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
-let g:yankring_history_dir = '$HOME/.vim'
-" set ambiwidth=double
 set rnu
