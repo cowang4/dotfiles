@@ -67,6 +67,7 @@ nnoremap <S-Tab> 0 <<
 map <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
+tnoremap <Esc> <C-\><C-n>
 
 au BufNewFile,BufRead *.tex set filetype=tex
 
