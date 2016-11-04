@@ -1,9 +1,9 @@
 call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neomake/neomake'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
-filetype off
 filetype plugin indent on
 set termguicolors
 set number
@@ -12,7 +12,6 @@ set modelines=0
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=80
 set encoding=utf-8
 set scrolloff=3
 set autoindent
@@ -66,15 +65,22 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 nnoremap <Tab> 0 >>
 nnoremap <S-Tab> 0 <<
 map <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
 
 au BufNewFile,BufRead *.tex set filetype=tex
 
 set guifont=Ubuntu\ Mono\ 14
+set rnu
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#whitespace#enabled = 0
-set rnu
+let g:airline#extensions#tabline#enabled = 2
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#right_alt_sep = '|'
+let g:airline_left_sep = ' '
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ' '
+let g:airline_right_alt_sep = '|'
