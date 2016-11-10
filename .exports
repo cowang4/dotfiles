@@ -2,6 +2,10 @@ if test "${PS1+set}"; then export CDPATH=.:~:~/Documents/School; fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
-export PATH=$PATH
+export PATH="$PATH:$HOME/.cargo/bin"
 export SUMO_HOME=/usr/share/sumo/
+
+cd ~/src/omnetpp-4.6/
 source ~/src/omnetpp-4.6/setenv
+clear
+cd ~
