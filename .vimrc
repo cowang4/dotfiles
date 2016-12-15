@@ -38,6 +38,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+color molokai
 
 map Q gq   
 inoremap <C-U> <C-G>u<C-U>
