@@ -35,7 +35,6 @@ bindkey '^R' history-incremental-search-backward
 #load custom aliases
 source $HOME/.aliases
 source $HOME/.exports
-source $HOME/.transfersh
 
 #load custom prompt w/ git status
 source /usr/bin/zsh-git-prompt/zshrc.sh
