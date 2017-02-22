@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 filetype plugin indent on
