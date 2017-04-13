@@ -13,3 +13,4 @@ ln -sfv "$DOTFILES_DIR/.zshrc" ~
 ln -sfv "$DOTFILES_DIR/i3/i3.config" "$HOME/.config/i3/config"
 ln -sfv "$DOTFILES_DIR/i3/i3status.config" "$HOME/.config/i3status/config"
 ln -sfv "$DOTFILES_DIR/i3/i3lock.service" "/etc/systemd/system/i3lock.service"
+ln -sfv "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"

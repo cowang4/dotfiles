@@ -76,6 +76,8 @@ au BufNewFile,BufRead *.tex set filetype=tex
 set guifont=Ubuntu\ Mono\ 14
 set rnu
 
+set spelllang=en
+
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#fnamemod = ':t'

@@ -1,5 +1,5 @@
 if test "${PS1+set}"; then export CDPATH=.:~:~/Documents/School; fi
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/Downloads/eclipse:$HOME/.cargo/bin"

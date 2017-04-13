@@ -1,6 +1,9 @@
 [Unit]
-Description=i3lock
+Description=i3lock on sleep
 Before=sleep.target
+Before=suspend.target
+Before=hibernate.target
+Before=hybrid-sleep.target
 
 [Service]
 User=greg
@@ -10,3 +13,6 @@ ExecStart=/usr/bin/i3lock -i /home/greg/Pictures/Wallpapers/everest.png
 
 [Install]
 WantedBy=sleep.target
+WantedBy=suspend.target
+WantedBy=hibernate.target
+WantedBy=hybrid-sleep.target

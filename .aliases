@@ -16,6 +16,7 @@ alias forecast='/usr/bin/ansiweather -F'
 alias daylight='/usr/bin/ansiweather -d true'
 alias chrome='google-chrome'
 alias vim='nvim'
+alias vi='nvim'
 
 alias gs='git status'
 alias ga='git add'
@@ -28,6 +29,7 @@ alias gl='git log --oneline --decorate'
 alias gh='git log --color --pretty=format:"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)" --relative-date --decorate'
 
 alias outing="ssh outing@ftp.union.rpi.edu"
+alias wifi="sudo systemctl restart NetworkManager.service"
 
 function cd() {
   emulate -L zsh
