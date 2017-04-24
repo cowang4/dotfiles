@@ -27,6 +27,9 @@ alias gd='git diff'
 alias gsync='git pull && git push'
 alias gl='git log --oneline --decorate'
 alias gh='git log --color --pretty=format:"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)" --relative-date --decorate'
+alias gitwork='export GIT_SSH_COMMAND="ssh -i ~/.ssh/work_ssh";git config --global user.name "greg-gravyty";git config --global user.email "greg@gravyty.com";'
+alias gitme='export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa";git config --global user.name "Greg Cowan";git config --global user.email "cowang4@yahoo.com";'
+
 
 alias outing="ssh outing@ftp.union.rpi.edu"
 alias wifi="sudo systemctl restart NetworkManager.service"
