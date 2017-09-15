@@ -1,6 +1,6 @@
-if test "${PS1+set}"; then export CDPATH=.:~:~/Documents/School; fi
+#if test "${PS1+set}"; then export CDPATH=.:~:~/Documents/School; fi
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
-export PATH="$PATH:$HOME/Downloads/eclipse:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin"
 export SUMO_HOME=/usr/share/sumo/

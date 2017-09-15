@@ -73,7 +73,6 @@ tnoremap <Esc> <C-\><C-n>
 
 au BufNewFile,BufRead *.tex set filetype=tex
 
-set guifont=Ubuntu\ Mono\ 14
 set rnu
 
 set spelllang=en

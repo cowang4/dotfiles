@@ -1,0 +1,6 @@
+
+Record a gif of your screen with byzanz.
+
+Use Shutter to take screenshots.
+
+Use arandr or xrandr to change the multi-monitor setup.
