@@ -1,8 +1,13 @@
+" VimPlug stuff
 call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'neomake/neomake'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 filetype plugin indent on
@@ -39,7 +44,11 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-color molokai
+
+syntax enable
+set background=dark
+colorscheme solarized
+color solarized
 
 map Q gq   
 inoremap <C-U> <C-G>u<C-U>
@@ -51,8 +60,6 @@ nnoremap k gk
 nnoremap ; :
 au FocusLost * :wa
 inoremap jj <ESC>
-inoremap hh <ESC>
-inoremap kk <ESC>
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -70,6 +77,8 @@ map <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 tnoremap <Esc> <C-\><C-n>
+nnoremap <leader>/ <leader>c<space>
+vnoremap <leader>/ <leader>c<space>
 
 au BufNewFile,BufRead *.tex set filetype=tex
 
@@ -78,15 +87,14 @@ set rnu
 set spelllang=en
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-let g:airline#extensions#tabline#enabled = 2
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#right_sep = ' '
-let g:airline#extensions#tabline#right_alt_sep = '|'
-let g:airline_left_sep = ' '
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ' '
-let g:airline_right_alt_sep = '|'
+
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+set noshowmode
+nmap <leader>b :Buffers<CR>
+nmap <leader>f :Files<CR>
+command! Windows :w
 
 " Just search on the internet for what these commands do.

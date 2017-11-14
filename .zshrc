@@ -39,3 +39,20 @@ source $HOME/.exports
 #load custom prompt w/ git status
 source /usr/bin/zsh-git-prompt/zshrc.sh
 PROMPT='%{$fg_bold[yellow]%}%n%{$reset_color%}:%{$fg_bold[red]%}%2~%{$reset_color%}$(git_super_status) %{$fg_bold[magenta]%}$%{$reset_color%} '
+
+# Returns whether the given command is executable or aliased.
+_has() {
+  return $( whence $1 >/dev/null )
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if _has fzf && _has rg; then
+  export FZF_DEFAULT_COMMAND='rg --color never -g""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_OPTS='
+  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+  '
+fi
