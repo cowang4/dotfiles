@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-DOTFILES_DIR=$(pwd)
+DOTFILES_DIR="$(dirname $(pwd)/$0)"
 
 [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 

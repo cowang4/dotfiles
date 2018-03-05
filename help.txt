@@ -5,10 +5,14 @@ Use Shutter to take screenshots.
 
 Use arandr or xrandr to change the multi-monitor setup.
 
-OpenShot for video editing.
+ShotCut for video editing.
 
 Baobab for disk usage analysing.
 
 Use lxappearence to change GTK themes.
 
 Octave for Matlab alternative.
+
+blueman-applet for bluetooth.
+
+Cockpit for server administration-y things.

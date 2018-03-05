@@ -81,6 +81,7 @@ nnoremap <leader>/ <leader>c<space>
 vnoremap <leader>/ <leader>c<space>
 
 au BufNewFile,BufRead *.tex set filetype=tex
+let g:filetype_pl="prolog"
 
 set rnu
 
@@ -96,5 +97,7 @@ set noshowmode
 nmap <leader>b :Buffers<CR>
 nmap <leader>f :Files<CR>
 command! Windows :w
+
+" <leader>c<space> NERD Commenter Toggle Comment
 
 " Just search on the internet for what these commands do.
