@@ -16,3 +16,106 @@ Octave for Matlab alternative.
 blueman-applet for bluetooth.
 
 Cockpit for server administration-y things.
+
+alsa for sound IO mixing.
+
+archey for unixporn info.
+screenfetch
+
+atom for text editing.
+
+neovim for text editing.
+
+betaflight-blackbox-explorer
+
+clang
+g++
+gdb
+
+breeze-icon-theme
+
+compton - compositor for X11
+
+discord
+
+et - like mosh / ssh
+
+etcher - iso writer
+
+feh - image shit?
+
+firefox developer edition
+
+hack - font
+
+gimp - image editor
+
+git
+
+gnome-calculator
+gnome-bluetooth?
+gnome-disk-utility?
+gnome-keyring?
+
+rg - ripgrep
+fzf - fuzzy finder
+
+gparted - partitioner
+
+htop - process viewer
+
+i3 - WM
+i3-wm
+i3lock
+i3status
+
+keybase
+
+kde-style-breeze-qt4
+
+latexmk
+
+rust from rustup
+
+python3 - pip3
+python2 - pip2
+
+thunar - file browser
+
+libreoffice - Office suite
+
+lightdm - display manager
+
+llvm
+
+nm-applet - network manager system tray applet
+
+postgresql-10
+
+ranger - command line file viewer
+
+rofi - command runner dmenu replacement
+
+scrot - screenshot tool ?
+
+seahorse - password frontend
+
+sl - for the trolls
+
+spotify-client
+
+task / taskwarrior
+
+signal-desktop
+
+virtualenv
+
+vlc
+
+wireshark
+
+zsh
+
+aptitude search '~i!~M' -F '%p' - lists installed packages
+
+
