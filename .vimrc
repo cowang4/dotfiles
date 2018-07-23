@@ -46,7 +46,7 @@ set softtabstop=2
 set expandtab
 
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 color solarized
 
@@ -99,5 +99,7 @@ nmap <leader>f :Files<CR>
 command! Windows :w
 
 " <leader>c<space> NERD Commenter Toggle Comment
+
+set clipboard+=unnamedplus
 
 " Just search on the internet for what these commands do.

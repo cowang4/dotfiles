@@ -1,5 +1,4 @@
 
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -8,22 +7,20 @@ alias diff='colordiff'
 alias quit='exit'
 alias ls='exa'
 alias la='exa -a'
-alias ll='exa -lah'
+alias ll='exa -lab'
 alias cls='clear && ls'
 alias ..='cd ..'
 alias c='clear'
 alias nt='nautilus'
-alias weather='/usr/bin/ansiweather'
-alias forecast='/usr/bin/ansiweather -F'
-alias daylight='/usr/bin/ansiweather -d true'
 alias chrome='google-chrome'
 alias vim='nvim'
 alias vi='nvim'
 alias n='nnn'
+alias bat='bat --style plain'
 
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit -S -m'
+alias gc='git commit -m'
 alias gp='git push'
 alias gpl='git pull'
 alias gd='git diff'
@@ -32,9 +29,7 @@ alias gl='git log --oneline --decorate'
 alias gh='git log --color --pretty=format:"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)" --relative-date --decorate'
 alias gch='git checkout'
 
-
 alias outing="ssh outing@ftp.union.rpi.edu"
-alias wifi="sudo systemctl restart NetworkManager.service"
 
 function cd() {
   emulate -L zsh

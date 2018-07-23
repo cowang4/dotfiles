@@ -5,4 +5,13 @@ export NNN_USE_EDITOR=1
 export NNN_DE_FILE_MANAGER=thunar
 export NNN_COPIER="$HOME/dotfiles/copier.sh"
 export ONI_NEOVIM_PATH=/usr/bin/nvim
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$HOME/Downloads/pypy3-v5.9.0-linux64/bin:$HOME/.local/bin:/opt/betaflight/betaflight-blackbox-explorer"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$HOME/Downloads/pypy3-v5.9.0-linux64/bin:$HOME/.local/bin:/opt/betaflight/betaflight-blackbox-explorer:/snap/bin"
+
+# wayland
+export GDK_BACKEND=wayland
+export CLUTTER_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland-egl
+export ECORE_EVAS_ENGINE=wayland_egl
+export ELM_ENGINE=wayland_egl
+export SDL_VIDEODRIVER=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1

@@ -37,7 +37,7 @@ source $HOME/.aliases
 source $HOME/.exports
 
 #load custom prompt w/ git status
-source /usr/bin/zsh-git-prompt/zshrc.sh
+source $HOME/dotfiles/zsh-git-prompt/zshrc.sh
 PROMPT='%{$fg_bold[yellow]%}%n%{$reset_color%}:%{$fg_bold[red]%}%2~%{$reset_color%}$(git_super_status) %{$fg_bold[magenta]%}$%{$reset_color%} '
 
 # Returns whether the given command is executable or aliased.

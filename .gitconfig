@@ -1,8 +1,10 @@
 [user]
 	email = cowang4@yahoo.com
 	name = Greg Cowan
-	signingkey = F03ED04134FE16B5 
+#	signingkey = F03ED04134FE16B5 
 [push]
 	default = simple
 [commit]
-  gpgsign = true
+#  gpgsign = true
+[gpg]
+	program = gpg2

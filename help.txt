@@ -15,15 +15,15 @@ Octave for Matlab alternative.
 
 blueman-applet for bluetooth.
 
-Cockpit for server administration-y things.
+fd for find replacement.
+rg for grep replacement.
+fzf for fuzzy finder.
+bat for cat.
+exa for ls replacement.
 
-alsa for sound IO mixing.
-
-archey for unixporn info.
-screenfetch
+neofetch
 
 atom for text editing.
-
 neovim for text editing.
 
 betaflight-blackbox-explorer
@@ -31,10 +31,10 @@ betaflight-blackbox-explorer
 clang
 g++
 gdb
+llvm
+valgrind
 
 breeze-icon-theme
-
-compton - compositor for X11
 
 discord
 
@@ -42,9 +42,7 @@ et - like mosh / ssh
 
 etcher - iso writer
 
-feh - image shit?
-
-firefox developer edition
+firefox
 
 hack - font
 
@@ -57,19 +55,11 @@ gnome-bluetooth?
 gnome-disk-utility?
 gnome-keyring?
 
-rg - ripgrep
-fzf - fuzzy finder
-
 gparted - partitioner
 
 htop - process viewer
 
-i3 - WM
-i3-wm
-i3lock
 i3status
-
-keybase
 
 kde-style-breeze-qt4
 
@@ -84,10 +74,6 @@ thunar - file browser
 
 libreoffice - Office suite
 
-lightdm - display manager
-
-llvm
-
 nm-applet - network manager system tray applet
 
 postgresql-10
@@ -95,8 +81,6 @@ postgresql-10
 ranger - command line file viewer
 
 rofi - command runner dmenu replacement
-
-scrot - screenshot tool ?
 
 seahorse - password frontend
 
