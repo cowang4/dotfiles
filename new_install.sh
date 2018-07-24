@@ -46,7 +46,8 @@ select yn in "Yes" "No"; do
         print "Changing default login shell to zsh"
         chsh -s $(which zsh) $USER
         export SHELL=$(which zsh)
-        # TODO add zsh-git-prompt
+        git submodule init    # for zsh-git-prompt
+        git submodule update
         break;;
       No ) break;;
   esac
@@ -83,6 +84,7 @@ select yn in "Yes" "No"; do
         apt_install arandr
         apt_install thunar
         apt_install compton #TODO config
+        apt_install dunst
         break;;
       No ) break;;
   esac
