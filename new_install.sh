@@ -82,7 +82,7 @@ select yn in "Yes" "No"; do
         apt_install kde-style-breeze-qt4
         apt_install arandr
         apt_install thunar
-        apt_install compton
+        apt_install compton #TODO config
         break;;
       No ) break;;
   esac

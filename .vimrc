@@ -10,10 +10,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
+set nocompatible
 filetype plugin indent on
 set termguicolors
 set number
-set nocompatible
 set modelines=0
 set wrap
 set textwidth=79
@@ -101,5 +101,7 @@ command! Windows :w
 " <leader>c<space> NERD Commenter Toggle Comment
 
 set clipboard+=unnamedplus
+
+set path+=**
 
 " Just search on the internet for what these commands do.
