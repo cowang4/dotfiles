@@ -15,6 +15,7 @@ print "Updating the dotfiles"
 print "Updating and Upgrading packages"
 sudo apt-get update
 yes | sudo apt-get upgrade
+sudo snap refresh
 
 function apt_install {
   print "apt installing $1"
@@ -26,6 +27,16 @@ function optional_apt_install {
   select yn in "Yes" "No"; do
     case $yn in
         Yes ) yes | sudo apt-get install $1; break;;
+        No ) break;;
+    esac
+  done
+}
+
+function optional_snap_install {
+  print "Do you want to install $1?"
+  select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) yes | sudo snap install $1; break;;
         No ) break;;
     esac
   done
@@ -55,18 +66,18 @@ done
 
 apt_install neovim
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
-# TODO add vim-plug plugin to install plugins
+curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-apt_install firefox
 apt_install htop
 apt_install python2
 apt_install pip2
 apt_install python3
 apt_install pip3
-apt_install thunar
 apt_install sl
 apt_install task
 apt_install neofetch
+apt_install lolcat
 
 print "Do you want to install i3?"
 select yn in "Yes" "No"; do
@@ -83,17 +94,33 @@ select yn in "Yes" "No"; do
         apt_install kde-style-breeze-qt4
         apt_install arandr
         apt_install thunar
-        apt_install compton #TODO config
+        apt_install compton
+        ln -sfv "$DOTFILES_DIR/compton.conf" "~/.config/compton.conf"
         apt_install dunst
         break;;
       No ) break;;
   esac
 done
 
+optional_apt_install firefox
 optional_apt_install shutter
 optional_apt_install libreoffice
-optional_apt_install spotifiy-client #TODO fix
+optional_snap_install spotifiy
 optional_apt_install signal-desktop
-optional_apt_install atom #TODO fix
+sudo add-apt-repository ppa:webupd8team/atom
+optional_apt_install atom
 
-#TODO rust, fd, rg, exa
+print "Installing Rust, fd, rg, exa, bpb, glitchcat"
+curl https://sh.rustup.rs -sSf | sh
+source $HOME/.cargo/env
+cargo install fd-find
+cargo install ripgrep
+cargo install exa
+cargo install bpb
+cargo install glitchcat
+
+print "Installing fzf"
+git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+$HOME/.fzf/install
+
+print "Done Greg's setup script. You should probably restart the computer."
