@@ -63,11 +63,14 @@ select yn in "Yes" "No"; do
       No ) break;;
   esac
 done
+#TODO bash
 
 apt_install neovim
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
+mkdir "$HOME/.local/share/nvim/site/autoload"
 curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ln -sfv "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 apt_install htop
 apt_install python2
@@ -84,7 +87,9 @@ select yn in "Yes" "No"; do
   case $yn in
       Yes )
         apt_install i3;
+        mkdir "$HOME/.config/i3"
         ln -sfv "$DOTFILES_DIR/i3/i3.config" "~/.config/i3/config"
+        mkdir "$HOME/.config/i3status"
         ln -sfv "$DOTFILES_DIR/i3/i3status.config" "~/.config/i3status/config"
         ln -sfv "$DOTFILES_DIR/i3/i3lock.service" "/etc/systemd/system/i3lock.service"
         apt_install nm-applet
@@ -122,5 +127,24 @@ cargo install glitchcat
 print "Installing fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
 $HOME/.fzf/install
+
+print "Do you want to install the backup script?"
+select yn in "Yes" "No"; do
+  case $yn in
+      Yes )
+        print "Installing cron, rsync, backup script"
+        apt_install rsync
+        apt_install cron
+        ln -sfv "$DOTFILES_DIR/backup.sh" "$HOME/.backup.sh"
+        if rg -q "backup.sh" /etc/crontab; then
+          print "cron job already active"
+        else
+          print "Adding cron job"
+          sudo su -c 'echo "0 22 * * * greg $HOME/.backup.sh" >> /etc/crontab'
+        fi
+        break;;
+      No ) break;;
+  esac
+done
 
 print "Done Greg's setup script. You should probably restart the computer."
