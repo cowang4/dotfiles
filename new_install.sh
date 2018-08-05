@@ -88,9 +88,9 @@ select yn in "Yes" "No"; do
       Yes )
         apt_install i3;
         mkdir "$HOME/.config/i3"
-        ln -sfv "$DOTFILES_DIR/i3/i3.config" "~/.config/i3/config"
+        ln -sfv "$DOTFILES_DIR/i3/i3.config" "$HOME/.config/i3/config"
         mkdir "$HOME/.config/i3status"
-        ln -sfv "$DOTFILES_DIR/i3/i3status.config" "~/.config/i3status/config"
+        ln -sfv "$DOTFILES_DIR/i3/i3status.config" "$HOME/.config/i3status/config"
         ln -sfv "$DOTFILES_DIR/i3/i3lock.service" "/etc/systemd/system/i3lock.service"
         apt_install nm-applet
         apt_install rofi
@@ -100,8 +100,10 @@ select yn in "Yes" "No"; do
         apt_install arandr
         apt_install thunar
         apt_install compton
-        ln -sfv "$DOTFILES_DIR/compton.conf" "~/.config/compton.conf"
+        ln -sfv "$DOTFILES_DIR/compton.conf" "$HOME/.config/compton.conf"
         apt_install dunst
+        sudo ln -sfv "$DOTFILES_DIR/i3/i3lock.service" "/etc/systemd/system/i3lock.service"
+        sudo systemctl enable i3lock
         break;;
       No ) break;;
   esac
