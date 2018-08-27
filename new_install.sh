@@ -149,4 +149,7 @@ select yn in "Yes" "No"; do
   esac
 done
 
+sudo add-apt-repository ppa:scribus/ppa
+optional_apt_install scribus-ng
+
 print "Done Greg's setup script. You should probably restart the computer."
