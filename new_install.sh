@@ -125,6 +125,7 @@ cargo install ripgrep
 cargo install exa
 cargo install bpb
 cargo install glitchcat
+cargo install bat
 
 print "Installing fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
@@ -151,5 +152,8 @@ done
 
 sudo add-apt-repository ppa:scribus/ppa
 optional_apt_install scribus-ng
+optional_snap_install tldr
+
+sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
 
 print "Done Greg's setup script. You should probably restart the computer."
