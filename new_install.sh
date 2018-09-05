@@ -155,5 +155,6 @@ optional_apt_install scribus-ng
 optional_snap_install tldr
 
 sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
+apt_install fonts-hack-ttf
 
 print "Done Greg's setup script. You should probably restart the computer."
