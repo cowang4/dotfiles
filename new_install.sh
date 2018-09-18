@@ -157,4 +157,6 @@ optional_snap_install tldr
 sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
 apt_install fonts-hack-ttf
 
+optional_install pandoc
+
 print "Done Greg's setup script. You should probably restart the computer."
