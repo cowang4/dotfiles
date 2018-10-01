@@ -72,6 +72,7 @@ curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -sfv "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
+apt_install curl
 apt_install cmake
 apt_install htop
 apt_install python2
@@ -101,6 +102,7 @@ select yn in "Yes" "No"; do
         apt_install arandr
         apt_install thunar
         apt_install compton
+        apt_install xbacklight
         ln -sfv "$DOTFILES_DIR/compton.conf" "$HOME/.config/compton.conf"
         apt_install dunst
         sudo ln -sfv "$DOTFILES_DIR/i3/i3lock.service" "/etc/systemd/system/i3lock.service"
