@@ -32,7 +32,7 @@ function apt_install {
 }
 
 function optional_apt_install {
-  if $(don_have $1)
+  if $(dont_have $1)
     then
       print "Do you want to install $1?"
       select yn in "Yes" "No"; do
@@ -93,12 +93,12 @@ ln -sfv "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 apt_install cmake
 apt_install htop
-apt_install python2
-apt_install pip2
+apt_install python
+apt_install python-pip
 apt_install python3
-apt_install pip3
+apt_install python3-pip
 apt_install sl
-apt_install task
+apt_install taskwarrior
 apt_install neofetch
 apt_install lolcat
 
@@ -112,10 +112,11 @@ select yn in "Yes" "No"; do
         mkdir "$HOME/.config/i3status"
         ln -sfv "$DOTFILES_DIR/i3/i3status.config" "$HOME/.config/i3status/config"
         ln -sfv "$DOTFILES_DIR/i3/i3lock.service" "/etc/systemd/system/i3lock.service"
-        apt_install nm-applet
+        apt_install network-manager
+        apt_install network-manager-gnome
         apt_install rofi
         apt_install breeze-icon-theme
-        apt_install lxappearence
+        apt_install lxappearance
         apt_install kde-style-breeze-qt4
         apt_install arandr
         apt_install thunar
@@ -190,11 +191,11 @@ select yn in "Yes" "No"; do
   esac
 done
 optional_snap_install tldr
+optional_apt_install pandoc
 
 sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
 apt_install fonts-hack-ttf
 
-optional_install pandoc
 
 print "Done Greg's setup script. You should probably restart the computer."
 
