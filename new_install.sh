@@ -15,9 +15,9 @@ yes | sudo apt-get upgrade
 sudo snap refresh
 
 function dont_have {
-  dpkg -l $1
+  dpkg -l $1 &> /dev/null
   FOUND=$?
-  RES=0; [ $FOUND == 0] && RES=1
+  RES=0; [ $FOUND == 0 ] && RES=1
   exit $RES
 }
 
