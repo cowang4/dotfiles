@@ -9,9 +9,6 @@ print "Starting Greg's System Setup Script"
 
 DOTFILES_DIR=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
-print "Updating the dotfiles"
-[ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
-
 print "Updating and Upgrading packages"
 sudo apt-get update
 yes | sudo apt-get upgrade
@@ -43,6 +40,11 @@ function optional_snap_install {
 }
 
 apt_install git
+apt_install curl
+
+print "Updating the dotfiles"
+[ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
+
 ln -sfv "$DOTFILES_DIR/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/.gitignore_global" ~
 
@@ -72,7 +74,6 @@ curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -sfv "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
-apt_install curl
 apt_install cmake
 apt_install htop
 apt_install python2

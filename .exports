@@ -5,7 +5,7 @@ export NNN_USE_EDITOR=1
 export NNN_DE_FILE_MANAGER=thunar
 export NNN_COPIER="$HOME/dotfiles/copier.sh"
 export ONI_NEOVIM_PATH=/usr/bin/nvim
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$HOME/Downloads/pypy3-v5.9.0-linux64/bin:$HOME/.local/bin:/opt/betaflight/betaflight-blackbox-explorer:/snap/bin"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$HOME/Downloads/pypy3-v5.9.0-linux64/bin:$HOME/.local/bin:/opt/betaflight/betaflight-blackbox-explorer:/snap/bin:/home/greg/Downloads/Velocidrone1.12"
 
 # wayland
 export GDK_BACKEND=wayland
