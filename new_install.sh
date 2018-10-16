@@ -14,19 +14,36 @@ sudo apt-get update
 yes | sudo apt-get upgrade
 sudo snap refresh
 
+function dont_have {
+  dpkg -l $1
+  FOUND=$?
+  RES=0; [ $FOUND == 0] && RES=1
+  exit $RES
+}
+
 function apt_install {
-  print "apt installing $1"
-  yes | sudo apt-get install $1
+  if $(dont_have $1)
+    then
+      print "apt installing $1"
+      yes | sudo apt install $1
+    else
+      print "already have $1, skipping"
+  fi
 }
 
 function optional_apt_install {
-  print "Do you want to install $1?"
-  select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) yes | sudo apt-get install $1; break;;
-        No ) break;;
-    esac
-  done
+  if $(don_have $1)
+    then
+      print "Do you want to install $1?"
+      select yn in "Yes" "No"; do
+        case $yn in
+            Yes ) yes | sudo apt install $1; break;;
+            No ) break;;
+        esac
+      done
+    else
+      print "already have $1, skipping"
+  fi
 }
 
 function optional_snap_install {
@@ -118,8 +135,16 @@ optional_apt_install shutter
 optional_apt_install libreoffice
 optional_snap_install spotifiy
 optional_apt_install signal-desktop
-sudo add-apt-repository ppa:webupd8team/atom
-optional_apt_install atom
+print "Do you want to install atom?"
+select yn in "Yes" "No"; do
+  case $yn in
+      Yes )
+        sudo add-apt-repository ppa:webupd8team/atom
+        apt_install atom
+        break;;
+      No ) break;;
+  esac
+done
 
 print "Installing Rust, fd, rg, exa, bpb, glitchcat"
 curl https://sh.rustup.rs -sSf | sh
@@ -154,8 +179,16 @@ select yn in "Yes" "No"; do
   esac
 done
 
-sudo add-apt-repository ppa:scribus/ppa
-optional_apt_install scribus-ng
+print "Do you want to install scribus-ng?"
+select yn in "Yes" "No"; do
+  case $yn in
+      Yes )
+        sudo add-apt-repository ppa:scribus/ppa
+        optional_apt_install scribus-ng
+        break;;
+      No ) break;;
+  esac
+done
 optional_snap_install tldr
 
 sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
@@ -164,3 +197,5 @@ apt_install fonts-hack-ttf
 optional_install pandoc
 
 print "Done Greg's setup script. You should probably restart the computer."
+
+exit
