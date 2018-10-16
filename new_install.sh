@@ -27,7 +27,7 @@ function apt_install {
       print "apt installing $1"
       yes | sudo apt install $1
     else
-      print "already have $1, skipping"
+      print "Already have $1, skipping"
   fi
 }
 
@@ -42,7 +42,7 @@ function optional_apt_install {
         esac
       done
     else
-      print "already have $1, skipping"
+      print "Already have $1, skipping"
   fi
 }
 
