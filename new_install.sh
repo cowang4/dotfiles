@@ -193,6 +193,7 @@ select yn in "Yes" "No"; do
 done
 optional_snap_install tldr
 optional_apt_install pandoc
+optional_apt_install gparted
 
 sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
 apt_install fonts-hack-ttf

@@ -16,7 +16,7 @@ alias chrome='google-chrome'
 alias vim='nvim'
 alias vi='nvim'
 alias n='nnn'
-alias bat='bat --theme "Monokai Extended Light" --style plain'
+alias bat='bat --theme "Monokai Extended" --style plain'
 
 alias gs='git status'
 alias ga='git add'
@@ -44,3 +44,10 @@ function mkdir() {
   cd $@
 }
 
+function loop() {
+  number=$1
+  shift
+  for n in $(seq $number); do
+    $@
+  done
+}

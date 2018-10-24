@@ -11,6 +11,14 @@ Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 set nocompatible
+
+set t_Co=256
+syntax enable
+set background=dark
+colorscheme solarized
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+
 filetype plugin indent on
 set termguicolors
 set number
@@ -44,11 +52,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
-syntax enable
-set background=light
-colorscheme solarized
-color solarized
 
 map Q gq   
 inoremap <C-U> <C-G>u<C-U>
