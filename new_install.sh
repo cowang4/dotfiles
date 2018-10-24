@@ -92,6 +92,7 @@ curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
 ln -sfv "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 apt_install cmake
+apt_install build-essential
 apt_install htop
 apt_install python
 apt_install python-pip
