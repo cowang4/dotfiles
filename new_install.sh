@@ -120,6 +120,7 @@ optional_apt_install atom
 print "Installing Rust, fd, rg, exa, bpb, glitchcat"
 curl https://sh.rustup.rs -sSf | sh
 source $HOME/.cargo/env
+cargo install cargo-update
 cargo install fd-find
 cargo install ripgrep
 cargo install exa
@@ -155,6 +156,6 @@ optional_apt_install scribus-ng
 optional_snap_install tldr
 
 sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
-apt_install fonts-hack-ttf
+optional_apt_install fonts-hack-ttf
 
 print "Done Greg's setup script. You should probably restart the computer."
