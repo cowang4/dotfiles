@@ -60,7 +60,6 @@ let maplocalleader=","
 nnoremap <leader><space> :noh<cr>
 nnoremap j gj
 nnoremap k gk
-nnoremap ; :
 au FocusLost * :wa
 inoremap jj <ESC>
 nnoremap <leader>w <C-w>v<C-w>l

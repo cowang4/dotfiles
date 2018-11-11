@@ -71,13 +71,16 @@ select yn in "Yes" "No"; do
       Yes )
         apt_install zsh;
         ln -sfv "$DOTFILES_DIR/.aliases" ~
-        ln -sfv "$DOTFILES_DIR/.exports" ~
+        ln -sfv "$DOTFILES_DIR/.profile" ~
         ln -sfv "$DOTFILES_DIR/.zshrc" ~
         print "Changing default login shell to zsh"
         chsh -s $(which zsh) $USER
         export SHELL=$(which zsh)
         git submodule init    # for zsh-git-prompt
         git submodule update
+        # fzf
+        git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+        $HOME/.fzf/install
         break;;
       No ) break;;
   esac
@@ -94,13 +97,12 @@ ln -sfv "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 apt_install cmake
 apt_install build-essential
 apt_install htop
-apt_install python
-apt_install python-pip
-apt_install python3
-apt_install python3-pip
+optional_apt_install python
+optional_apt_install python-pip
+optional_apt_install python3
+optional_apt_install python3-pip
 apt_install sl
 apt_install taskwarrior
-apt_install neofetch
 apt_install lolcat
 
 print "Do you want to install i3?"
@@ -123,6 +125,7 @@ select yn in "Yes" "No"; do
         apt_install thunar
         apt_install compton
         apt_install xbacklight
+        apt_install neofetch
         ln -sfv "$DOTFILES_DIR/compton.conf" "$HOME/.config/compton.conf"
         apt_install dunst
         sudo ln -sfv "$DOTFILES_DIR/i3/i3lock.service" "/etc/systemd/system/i3lock.service"
@@ -148,19 +151,23 @@ select yn in "Yes" "No"; do
   esac
 done
 
-print "Installing Rust, fd, rg, exa, bpb, glitchcat"
-curl https://sh.rustup.rs -sSf | sh
-source $HOME/.cargo/env
-cargo install fd-find
-cargo install ripgrep
-cargo install exa
-cargo install bpb
-cargo install glitchcat
-cargo install bat
+print "Do you want to install Rust, fd, rg, exa, bpb, glitchcat, bat?"
+select yn in "Yes" "No"; do
+  case $yn in
+      Yes )
+        curl https://sh.rustup.rs -sSf | sh
+        source $HOME/.cargo/env
+        cargo install fd-find
+        cargo install ripgrep
+        cargo install exa
+        cargo install bpb
+        cargo install glitchcat
+        cargo install bat
+        break;;
+      No ) break;;
+  esac
+done
 
-print "Installing fzf"
-git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
-$HOME/.fzf/install
 
 print "Do you want to install the backup script?"
 select yn in "Yes" "No"; do
