@@ -151,12 +151,14 @@ select yn in "Yes" "No"; do
   esac
 done
 
+<<<<<<< HEAD
 print "Do you want to install Rust, fd, rg, exa, bpb, glitchcat, bat?"
 select yn in "Yes" "No"; do
   case $yn in
       Yes )
         curl https://sh.rustup.rs -sSf | sh
         source $HOME/.cargo/env
+        cargo install cargo-update
         cargo install fd-find
         cargo install ripgrep
         cargo install exa
@@ -167,7 +169,6 @@ select yn in "Yes" "No"; do
       No ) break;;
   esac
 done
-
 
 print "Do you want to install the backup script?"
 select yn in "Yes" "No"; do
@@ -203,7 +204,7 @@ optional_apt_install pandoc
 optional_apt_install gparted
 
 sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
-apt_install fonts-hack-ttf
+optional_apt_install fonts-hack-ttf
 
 
 print "Done Greg's setup script. You should probably restart the computer."
