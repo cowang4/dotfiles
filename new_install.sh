@@ -92,6 +92,7 @@ ln -sfv "$DOTFILES_DIR/.vimrc" ~
 mkdir "$HOME/.local/share/nvim/site/autoload"
 curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir "$HOME/.config/nvim"
 ln -sfv "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 apt_install cmake
