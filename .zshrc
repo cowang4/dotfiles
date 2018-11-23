@@ -34,7 +34,7 @@ bindkey '^R' history-incremental-search-backward
 
 #load custom aliases
 source $HOME/.aliases
-source $HOME/.exports
+source $HOME/.profile
 
 #load custom prompt w/ git status
 source $HOME/dotfiles/zsh-git-prompt/zshrc.sh
