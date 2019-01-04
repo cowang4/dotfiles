@@ -36,6 +36,9 @@ bindkey '^R' history-incremental-search-backward
 source $HOME/.aliases
 source $HOME/.profile
 
+#colors
+eval `dircolors $HOME/.dir_colors`
+
 #load custom prompt w/ git status
 GIT_PROMPT_EXECUTABLE="haskell"
 source $HOME/dotfiles/zsh-git-prompt/zshrc.sh

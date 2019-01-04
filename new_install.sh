@@ -131,6 +131,7 @@ select yn in "Yes" "No"; do
         apt_install dunst
         sudo ln -sfv "$DOTFILES_DIR/i3/i3lock.service" "/etc/systemd/system/i3lock.service"
         sudo systemctl enable i3lock
+        ln -sfv "$DOTFILES_DIR/dircolors.256dark" "$HOME/.dir_colors"
         break;;
       No ) break;;
   esac
@@ -166,6 +167,7 @@ select yn in "Yes" "No"; do
         cargo install bpb
         cargo install glitchcat
         cargo install bat
+        cargo install vivid
         break;;
       No ) break;;
   esac
