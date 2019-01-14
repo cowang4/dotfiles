@@ -153,7 +153,6 @@ select yn in "Yes" "No"; do
   esac
 done
 
-<<<<<<< HEAD
 print "Do you want to install Rust, fd, rg, exa, bpb, glitchcat, bat?"
 select yn in "Yes" "No"; do
   case $yn in
