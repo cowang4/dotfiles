@@ -38,7 +38,7 @@ function cd() {
   ls
 }
 
-function mkdir() {
+function mkdircd() {
   emulate -L zsh
   command mkdir $@ &&
   cd $@
