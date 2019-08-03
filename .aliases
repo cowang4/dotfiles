@@ -1,7 +1,4 @@
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias diff='colordiff'
 
 alias quit='exit'
@@ -20,16 +17,15 @@ alias bat='bat --theme "Monokai Extended" --style plain'
 
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit -m'
+alias gc='git commit'
 alias gp='git push'
 alias gpl='git pull'
 alias gd='git diff'
 alias gsync='git pull && git push'
 alias gl='git log --oneline --decorate'
 alias gh='git log --color --pretty=format:"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)" --relative-date --decorate'
-alias gch='git checkout'
+alias gco='git checkout'
 
-alias outing="ssh outing@ftp.union.rpi.edu"
 
 function cd() {
   emulate -L zsh

@@ -52,7 +52,7 @@ _has() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if _has fzf && _has rg; then
-  export FZF_DEFAULT_COMMAND='rg --color never'
+  export FZF_DEFAULT_COMMAND='fd --type f'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_DEFAULT_OPTS='

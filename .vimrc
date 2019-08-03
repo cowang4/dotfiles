@@ -1,19 +1,17 @@
 " VimPlug stuff
 call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'neomake/neomake'
 Plug 'itchyny/lightline.vim'
-Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
-set nocompatible
+set nocompatible    " breaks old vi compatibility
 
-set t_Co=256
-syntax enable
+set t_Co=256    " terminal colors to 256
+syntax enable   " enables synax highlighting
 set background=dark
 colorscheme solarized
 highlight Normal ctermbg=NONE
@@ -39,21 +37,21 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set noswapfile
-set nobackup		
-set history=50		
-set incsearch	
+set nobackup
+set history=50
+set incsearch
 set hlsearch
 set ignorecase
 set smartcase
 set gdefault
 set showmatch
 set mouse=a
-set tabstop=2 
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
-map Q gq   
+map Q gq
 inoremap <C-U> <C-G>u<C-U>
 let mapleader=","
 let maplocalleader=","
@@ -85,6 +83,10 @@ nnoremap <leader>p "+p
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>/ <leader>c<space>
 vnoremap <leader>/ <leader>c<space>
+nnoremap <leader>e :Files<CR>
+nnoremap <leader>s :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>l :Lines<CR>
 
 au BufNewFile,BufRead *.tex set filetype=tex
 let g:filetype_pl="prolog"
@@ -100,8 +102,6 @@ let g:NERDCompactSexyComs = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 set noshowmode
-nmap <leader>b :Buffers<CR>
-nmap <leader>f :Files<CR>
 command! Windows :w
 
 " <leader>c<space> NERD Commenter Toggle Comment
