@@ -1,6 +1,5 @@
 " VimPlug stuff
 call plug#begin()
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -9,105 +8,97 @@ Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 set nocompatible    " breaks old vi compatibility
+set encoding=utf-8  " utf-8 encoding
 
-set t_Co=256    " terminal colors to 256
-syntax enable   " enables synax highlighting
+set termguicolors   " enables terminal truecolor
+syntax enable       " enables synax highlighting
+
+" colorscheme
 set background=dark
 colorscheme solarized
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
 
-filetype plugin indent on
-set termguicolors
-set number
-set modelines=0
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-set encoding=utf-8
-set scrolloff=3
-set autoindent
-set showmode
-set showcmd
-set hidden
-set wildmenu
-set wildmode=list:longest
-set ttyfast
-set ruler
-set backspace=indent,eol,start
-set laststatus=2
-set noswapfile
-set nobackup
-set history=50
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
-set gdefault
-set showmatch
-set mouse=a
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+filetype plugin indent on   " turns on filetype detection, with plugin and indent support
+set number                  " display line numbers in left margin
+set relativenumber          " set relative line numbers in the left margin
+set nomodeline              " disable the modelines feature
+set wrap                    " turn on line wrapping
+set textwidth=80            " line wrap at XX chars
+set formatoptions=r         " see :help fo-table
+set scrolloff=3             " minimum number of lines to keep above and below the cursor
+set autoindent              " keep indentation of previous line on a new line
+set showcmd                 " show partial command on bottom
+set noshowmode              " don't show mode (use lightline instead)
+set hidden                  " allows non-visible buffers to have unsaved changes
+set wildmenu                " command-line completion is better
+set wildmode=list:longest   " completion style
+set backspace=indent,eol,start  " backspace works across lines etc
+set laststatus=2            " always use status line
+set noswapfile              " don't use swapfiles
+set nobackup                " don't make backups before overwriting a file
+set history=10              " number of :cmd historys to keep
 
-map Q gq
-inoremap <C-U> <C-G>u<C-U>
+set incsearch               " show search results as you type
+set hlsearch                " highlight the search results
+set ignorecase              " ignore case in searchs
+set smartcase               " case sensitive search if there's an uppercase
+set gdefault                " :subtitute will change all matches in a line
+
+set showmatch               " briefly jump to matching bracket when one is inserted
+set mouse=a                 " enable mouse for all modes
+
+set tabstop=4               " number of spaces that a tab is for displaying
+set shiftwidth=4            " number of spaces to use for each step of indent
+set softtabstop=4           " number of spaces that tab is for editing
+set expandtab               " insert mode use spaces instead of tabs
+
+" disable ex mode
+nnoremap Q <Nop>
+" leader is comma
 let mapleader=","
 let maplocalleader=","
+" ,<space> turns off search highlighting
 nnoremap <leader><space> :noh<cr>
+" move across wrapped lines
 nnoremap j gj
 nnoremap k gk
 nnoremap <Up> gk
 nnoremap <Down> gj
 inoremap <Up> <C-o>gk
 inoremap <Down> <C-o>gj
+" save on focus lost
 au FocusLost * :wa
-inoremap jj <ESC>
-nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" save with Ctrl-s
 nnoremap <C-s> :w<Enter>
 inoremap <C-s> <ESC>:w<Enter>
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
+" indent with tab in normal mode
 nnoremap <Tab> 0 >>
 nnoremap <S-Tab> 0 <<
-map <leader>n :NERDTreeToggle<CR>
+" system clipboard with leader
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
+" escape with jj
+inoremap jj <ESC>
+" escape terminal
 tnoremap <Esc> <C-\><C-n>
-nnoremap <leader>/ <leader>c<space>
-vnoremap <leader>/ <leader>c<space>
+" fzf keybindings
 nnoremap <leader>e :Files<CR>
 nnoremap <leader>s :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :Lines<CR>
 
+" filetype settings
 au BufNewFile,BufRead *.tex set filetype=tex
 let g:filetype_pl="prolog"
 
-set rnu
-
-set spelllang=en
-
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
+" NerdCommenter settings
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDTrimTrailingWhitespace = 1
 
-set noshowmode
 command! Windows :w
 
-" <leader>c<space> NERD Commenter Toggle Comment
+" <leader>c<space> to toggle comments with NerdCommenter
 
+" enables system clipboard buffers
 set clipboard+=unnamedplus
 
-set path+=**
-
-" Just search on the internet for what these commands do.
