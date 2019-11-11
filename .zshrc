@@ -60,3 +60,5 @@ if _has fzf && _has rg; then
   --color info:108,prompt:109,spinner:108,pointer:168,marker:168
   '
 fi
+
+eval "$(starship init zsh)"

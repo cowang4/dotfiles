@@ -73,6 +73,7 @@ select yn in "Yes" "No"; do
         ln -sfv "$DOTFILES_DIR/.aliases" ~
         ln -sfv "$DOTFILES_DIR/.profile" ~
         ln -sfv "$DOTFILES_DIR/.zshrc" ~
+        ln -sfv "$DOTFILES_DIR/starship.toml" ~/.config/
         print "Changing default login shell to zsh"
         chsh -s $(which zsh) $USER
         export SHELL=$(which zsh)
@@ -87,6 +88,9 @@ select yn in "Yes" "No"; do
 done
 #TODO bash
 
+sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
+apt_install fonts-hack-ttf
+
 apt_install neovim
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 mkdir "$HOME/.local/share/nvim/site/autoload"
@@ -94,17 +98,6 @@ curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir "$HOME/.config/nvim"
 ln -sfv "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
-
-apt_install cmake
-apt_install build-essential
-apt_install htop
-optional_apt_install python
-optional_apt_install python-pip
-optional_apt_install python3
-optional_apt_install python3-pip
-apt_install sl
-apt_install taskwarrior
-apt_install lolcat
 
 print "Do you want to install i3?"
 select yn in "Yes" "No"; do
@@ -138,22 +131,10 @@ select yn in "Yes" "No"; do
 done
 
 optional_apt_install firefox
-optional_apt_install shutter
 optional_apt_install libreoffice
 optional_snap_install spotifiy
-optional_apt_install signal-desktop
-print "Do you want to install atom?"
-select yn in "Yes" "No"; do
-  case $yn in
-      Yes )
-        sudo add-apt-repository ppa:webupd8team/atom
-        apt_install atom
-        break;;
-      No ) break;;
-  esac
-done
 
-print "Do you want to install Rust, fd, rg, exa, bpb, glitchcat, bat?"
+print "Do you want to install Rust, fd, rg, exa, bpb, bat?"
 select yn in "Yes" "No"; do
   case $yn in
       Yes )
@@ -164,9 +145,9 @@ select yn in "Yes" "No"; do
         cargo install ripgrep
         cargo install exa
         cargo install bpb
-        cargo install glitchcat
         cargo install bat
         cargo install vivid
+        cargo install starship
         break;;
       No ) break;;
   esac
@@ -190,24 +171,6 @@ select yn in "Yes" "No"; do
       No ) break;;
   esac
 done
-
-print "Do you want to install scribus-ng?"
-select yn in "Yes" "No"; do
-  case $yn in
-      Yes )
-        sudo add-apt-repository ppa:scribus/ppa
-        optional_apt_install scribus-ng
-        break;;
-      No ) break;;
-  esac
-done
-optional_snap_install tldr
-optional_apt_install pandoc
-optional_apt_install gparted
-
-sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
-optional_apt_install fonts-hack-ttf
-
 
 print "Done Greg's setup script. You should probably restart the computer."
 

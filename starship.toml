@@ -1,0 +1,22 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+prompt_order = [
+    "username",
+    "hostname",
+    "directory",
+    "git_branch",
+    "git_state",
+    "git_status",
+    "python",
+    "rust",
+    "nix_shell",
+    "memory_usage",
+    "env_var",
+    "cmd_duration",
+    "jobs",
+    "battery",
+    "time",
+    "character",
+]
+
