@@ -77,8 +77,6 @@ select yn in "Yes" "No"; do
         print "Changing default login shell to zsh"
         chsh -s $(which zsh) $USER
         export SHELL=$(which zsh)
-        git submodule init    # for zsh-git-prompt
-        git submodule update
         # fzf
         git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
         $HOME/.fzf/install
@@ -86,13 +84,13 @@ select yn in "Yes" "No"; do
       No ) break;;
   esac
 done
-#TODO bash
 
 sudo ln -sfv $HOME/dotfiles/diff-so-fancy /usr/local/bin/diff-so-fancy
 apt_install fonts-hack-ttf
 
 apt_install neovim
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
+sudo chown -R greg "$HOME/.local/share/nvim"
 mkdir "$HOME/.local/share/nvim/site/autoload"
 curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -134,6 +132,7 @@ optional_apt_install firefox
 optional_apt_install libreoffice
 optional_snap_install spotifiy
 
+apt_install clang
 print "Do you want to install Rust, fd, rg, exa, bpb, bat?"
 select yn in "Yes" "No"; do
   case $yn in
@@ -144,9 +143,7 @@ select yn in "Yes" "No"; do
         cargo install fd-find
         cargo install ripgrep
         cargo install exa
-        cargo install bpb
         cargo install bat
-        cargo install vivid
         cargo install starship
         break;;
       No ) break;;

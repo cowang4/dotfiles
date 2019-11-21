@@ -39,11 +39,6 @@ source $HOME/.profile
 #colors
 eval `dircolors $HOME/.dir_colors`
 
-#load custom prompt w/ git status
-GIT_PROMPT_EXECUTABLE="haskell"
-source $HOME/dotfiles/zsh-git-prompt/zshrc.sh
-PROMPT='%{$fg_bold[yellow]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg_bold[red]%}%2~%{$reset_color%}$(git_super_status) %{$fg_bold[magenta]%}>_%{$reset_color%} '
-
 # Returns whether the given command is executable or aliased.
 _has() {
   return $( whence $1 >/dev/null )
