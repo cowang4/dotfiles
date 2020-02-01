@@ -1,3 +1,3 @@
 #!/bin/sh
-restic backup $HOME/Pictures
-restic backup $HOME/Documents
+restic backup -r b2:Cowang4Backups $HOME/Pictures
+restic backup -r b2:Cowang4Backups $HOME/Documents
